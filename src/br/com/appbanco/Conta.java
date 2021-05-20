@@ -5,10 +5,10 @@ import java.math.BigDecimal;
 public class Conta {
     private int numeroConta;
     private Cliente correntista;
-    protected float saldo;
+    protected BigDecimal saldo;
 
 
-    public Conta(int numeroConta, Cliente correntista, float saldo) {
+    public Conta(int numeroConta, Cliente correntista, BigDecimal saldo) {
         this.numeroConta = numeroConta;
         this.correntista = correntista;
         this.saldo = saldo;
@@ -34,11 +34,11 @@ public class Conta {
         this.correntista = correntista;
     }
 
-    public float getSaldo() {
+    public BigDecimal getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(float saldo) {
+    public void setSaldo(BigDecimal saldo) {
         this.saldo = saldo;
     }
 }

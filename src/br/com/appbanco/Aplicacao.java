@@ -11,8 +11,8 @@ public class Aplicacao {
 	    Cliente p1, p2;
 		p1 = new Cliente("Maria","maria@gmail.com");
 		p2 = new Cliente("Jose","jose@gmail.com");
-	   	c1 = new Conta(123456,p1, 100f);
-		c2 = new Conta(987567,p2, 120f);
+	   	c1 = new Conta(123456,p1,new BigDecimal("100.25"));
+		c2 = new Conta(987567,p2,new BigDecimal("135.00"));
 
 		System.out.println("----------Bem Vindo ao App Banco --------" + "\n");
         System.out.printf("A CONTA %d FOI CRIADA COM SUCESSO! %n", c1.getNumeroConta());
