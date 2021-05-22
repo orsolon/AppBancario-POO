@@ -52,6 +52,7 @@ public class Conta implements Transacoes {
 
     @Override
     public boolean sacar(BigDecimal valor) {
+
         BigDecimal valorSaldo = new BigDecimal(String.valueOf(this.getSaldo()));
         BigDecimal valorSacado = new BigDecimal(String.valueOf(valor));
         double answer = (valorSaldo.compareTo(valorSacado));
@@ -59,9 +60,9 @@ public class Conta implements Transacoes {
             this.setSaldo(this.getSaldo().subtract(valorSacado));
             return true;
         }
-        return  false;
-        /*
-        switch (TipoPessoa.valueOf()) {
+        return false;
+       /*
+        switch (tipo) {
             case TipoPessoa.FISICA:
                 BigDecimal valorSaldo = new BigDecimal(String.valueOf(this.getSaldo()));
                 BigDecimal valorSacado = new BigDecimal(String.valueOf(valor));
@@ -77,7 +78,18 @@ public class Conta implements Transacoes {
 
         return false;
 
-         */
+
+    }
+*/
+
+    }
+
+    public void descontarTaxaPJ (BigDecimal valor){
+        double taxa = 0.5;
+        BigDecimal valorTaxa = new BigDecimal(String.valueOf(valor));
+        BigDecimal result = valorTaxa.multiply(BigDecimal.valueOf(taxa));
+        this.setSaldo(this.getSaldo().subtract(result));
+
     }
 
     @Override

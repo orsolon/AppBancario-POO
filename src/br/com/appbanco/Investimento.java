@@ -9,7 +9,10 @@ public class Investimento extends Conta {
     }
 
 
-    public void investir() {
-
+    public void investir(BigDecimal valor) {
+        double taxa = 0.2;
+        BigDecimal valorTaxa = new BigDecimal(String.valueOf(valor));
+        BigDecimal result = valorTaxa.multiply(BigDecimal.valueOf(taxa));
+        this.setSaldo(this.getSaldo().add(result));
     }
 }

@@ -29,11 +29,18 @@ public class Aplicacao {
 		System.out.println("O saldo Atual é de: " + c1.getSaldo());
 
 
-
 		System.out.println("_________________________________________" + "\n");
 		System.out.printf("A CONTA PESSOA JURIDICA SOB NÚMERO: %d FOI CRIADA COM SUCESSO! %n", c2.getNumeroConta());
 		System.out.println("Em nome de : " + c2.getCorrentista().getNome());
 		System.out.println("O saldo inicial é de: " + c2.getSaldo());
+		System.out.println("Vamos DEPOSITAR R$ 500.00");
+		c2.depositar(new BigDecimal("500.00"));
+		System.out.println("O saldo Atual é de: " + c2.getSaldo());
+		System.out.println("Vamos SACAR R$ 60.00");
+		c2.sacar(new BigDecimal("50.00"));
+		System.out.println("O saldo Atual é de: " + c2.getSaldo());
+
+
 
 
     }

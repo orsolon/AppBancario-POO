@@ -2,13 +2,6 @@ package br.com.appbanco;
 
 public enum TipoPessoa {
 
-    FISICA, JURIDICA;
-
-    TipoPessoa() {
-
-    }
-
-/*
     FISICA('F'), JURIDICA('J');
 
     public char sigla;
@@ -20,6 +13,6 @@ public enum TipoPessoa {
     TipoPessoa(char sigla){
         this.sigla = sigla;
     }
-*/
+
 
 }
