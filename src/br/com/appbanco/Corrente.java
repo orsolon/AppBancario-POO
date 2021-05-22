@@ -1,5 +1,16 @@
 package br.com.appbanco;
 
-public class Corrente extends Conta {
+import java.math.BigDecimal;
+
+public class Corrente extends Conta  {
+
+    public Corrente() {
+    }
+
+    public Corrente(int numeroConta, Cliente correntista, BigDecimal saldo) {
+
+        super(numeroConta, correntista, saldo);
+    }
+
 
 }

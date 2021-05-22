@@ -1,17 +1,14 @@
 package br.com.appbanco;
 
+import java.math.BigDecimal;
+
 public interface Transacoes {
 
-    public default void sacar() {
 
-    }
+    public void depositar(BigDecimal valor);
 
-    public default void depositar() {
+    public boolean sacar(BigDecimal valor) ;
 
-    }
-
-    public default void transferir() {
-
-    }
+    public  void transferir();
 
 }

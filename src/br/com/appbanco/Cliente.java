@@ -3,14 +3,16 @@ package br.com.appbanco;
 public class Cliente {
     String nome;
     String email;
+    TipoPessoa tipo;
 
     public Cliente() {
 
     }
 
-    public Cliente(String nome, String email) {
+    public Cliente(String nome, String email, TipoPessoa tipo) {
         this.nome = nome;
         this.email = email;
+        this.tipo = tipo;
     }
 
     public String getNome() {
@@ -23,6 +25,10 @@ public class Cliente {
 
     public String getEmail() {
         return email;
+    }
+
+    public TipoPessoa getTipo() {
+        return tipo;
     }
 
     public void setEmail(String email) {

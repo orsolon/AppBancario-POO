@@ -2,21 +2,22 @@ package br.com.appbanco;
 
 import java.math.BigDecimal;
 
-public class Conta {
+public class Conta implements Transacoes {
     private int numeroConta;
     private Cliente correntista;
     protected BigDecimal saldo;
 
+    public Conta() {
+
+    }
 
     public Conta(int numeroConta, Cliente correntista, BigDecimal saldo) {
+        this();
         this.numeroConta = numeroConta;
         this.correntista = correntista;
         this.saldo = saldo;
     }
 
-    public Conta() {
-
-    }
 
     public int getNumeroConta() {
         return numeroConta;
@@ -40,5 +41,47 @@ public class Conta {
 
     public void setSaldo(BigDecimal saldo) {
         this.saldo = saldo;
+    }
+
+
+    @Override
+    public void depositar(BigDecimal valor) {
+        BigDecimal valorDepositado = new BigDecimal(String.valueOf(valor));
+        this.setSaldo(this.getSaldo().add(valorDepositado));
+    }
+
+    @Override
+    public boolean sacar(BigDecimal valor) {
+        BigDecimal valorSaldo = new BigDecimal(String.valueOf(this.getSaldo()));
+        BigDecimal valorSacado = new BigDecimal(String.valueOf(valor));
+        double answer = (valorSaldo.compareTo(valorSacado));
+        if (answer == 0 || answer == 1) {
+            this.setSaldo(this.getSaldo().subtract(valorSacado));
+            return true;
+        }
+        return  false;
+        /*
+        switch (TipoPessoa.valueOf()) {
+            case TipoPessoa.FISICA:
+                BigDecimal valorSaldo = new BigDecimal(String.valueOf(this.getSaldo()));
+                BigDecimal valorSacado = new BigDecimal(String.valueOf(valor));
+                double answer = (valorSaldo.compareTo(valorSacado));
+                if (answer == 0 || answer == 1) {
+                    this.setSaldo(this.getSaldo().subtract(valorSacado));
+                    return true;
+                }
+            case TipoPessoa.JURIDICA:
+                double taxa = 0.5;
+
+        }
+
+        return false;
+
+         */
+    }
+
+    @Override
+    public void transferir() {
+
     }
 }

@@ -1,4 +1,15 @@
 package br.com.appbanco;
 
-public class Poupanca {
+import java.math.BigDecimal;
+
+public class Poupanca extends Conta {
+
+    public Poupanca() {
+    }
+
+    public Poupanca(int numeroConta, Cliente correntista, BigDecimal saldo) {
+        super(numeroConta, correntista, saldo);
+    }
+
+
 }
